@@ -81,8 +81,14 @@ COMMON_GLOBAL_CFLAGS += -DSEC_HWJPEG_G2D -DWORKAROUND_BUG_10194508
 # HWC
 BOARD_USES_PROPRIETARY_HWC := true
 
+# Disable cursor layer
+TARGET_DISABLE_CURSOR_LAYER := true
+
 # PIE
 TARGET_NEEDS_NON_PIE_SUPPORT := true
+
+# Use legacy MMAP
+BOARD_USES_LEGACY_MMAP := true
 
 # FIMG Acceleration
 BOARD_USES_FIMGAPI := true
@@ -166,6 +172,9 @@ BACKLIGHT_PATH := /sys/class/backlight/panel/brightness
 
 # Override healthd HAL
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.exynos4
+
+# Show Battery Percentage in LPM mode
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # inherit from the proprietary version
 -include vendor/samsung/smdk4412-common/BoardConfigVendor.mk
